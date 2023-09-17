@@ -18,7 +18,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        //checkUser()
+        checkUser()
         initUI()
     }
 
@@ -71,7 +71,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
     }
-   /* private fun checkUser() {
+    private fun checkUser() {
         // Verifica si el usuario ya ha iniciado sesión
         val user = FirebaseAuth.getInstance().currentUser
         if (user != null) {
@@ -79,7 +79,7 @@ class LoginActivity : AppCompatActivity() {
             finish()
 
         }
-    }*/
+    }
 
     private fun resetPassword() {
        val resetPassword = binding.tvForgotPassword

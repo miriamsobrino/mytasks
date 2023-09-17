@@ -1,6 +1,7 @@
 package com.mirdev.mytasks
 
 import android.app.Dialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -166,8 +167,19 @@ class HomeActivity : AppCompatActivity() {
 
                 }
 
+            binding.ivLogOut.setOnClickListener {
+              showLogin()
 
+
+            }
         }
+
+    private fun showLogin(){
+        FirebaseAuth.getInstance().signOut()
+        val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
 
     private fun updateTasks(){
         adapter.notifyDataSetChanged()
